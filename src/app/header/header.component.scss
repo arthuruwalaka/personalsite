@@ -1,0 +1,21 @@
+#header{
+    display: flex; 
+    flex-direction: row;
+    background-color: pink;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+    min-height: 4vh;
+    padding: 10px 50px;
+}
+#sections{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: yellow;
+    align-items: center;
+    // padding: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+}
