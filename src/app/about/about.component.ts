@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -8,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
+  // constructor(private route: ActivatedRoute) {}
+
+  // ngAfterViewInit() {
+  //   this.route.fragment.subscribe(fragment => {
+  //     if (fragment) {
+  //       document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   });
+  // }
 
 }
