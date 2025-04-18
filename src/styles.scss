@@ -1,33 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
-/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles below */
+:root {
+    --header-height: 64px;
+}
+
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
+    @apply bg-gray-900;
 }
 
 #main-container {
-    min-height: 100vh;
-    height: 100vh;
-    overflow: hidden;
+    position: fixed; /* Fix container to viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
+    background-color: pink;
 }
 
+/* Fixed header takes up its space */
+nav {
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    background-color: transparent;
+    z-index: 50;
+}
+
+/* Scrollable content area */
 #content {
+    position: relative;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
+    background-color: yellow;
     scroll-behavior: smooth;
-    background-color: orange;
+    // margin-top: calc(var(--header-height) * 1); /* Pull content up behind header */
+    // padding-top: var(--header-height); /* Add padding to offset the margin */
 }
 
-/* Target only component elements, not router-outlet */
+/* Tetris-themed section styles */
 #content > app-home,
 #content > app-about,
 #content > app-resume,
 #content > app-projects,
 #content > app-skills {
-    min-height: 100vh;
-    scroll-margin-top: 4vh;
+    min-height: 100%;
+    @apply border-2 border-gray-700 relative;
+}
+
+/* Tetris block-like hover effect */
+#content > app-home:hover,
+#content > app-about:hover,
+#content > app-resume:hover,
+#content > app-projects:hover,
+#content > app-skills:hover {
+    @apply shadow-lg shadow-white/20 transition-all duration-300;
 }

@@ -1,4 +1,8 @@
-#about{
-    background-color: red;
-    min-height: 100%; 
+#about {
+    min-height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.05)); /* Cyan theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }

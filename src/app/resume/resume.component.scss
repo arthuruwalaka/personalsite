@@ -1,4 +1,8 @@
-#resume{
-    background-color: purple;
+#resume {
     min-height: 100%;
+    background: linear-gradient(45deg, rgba(128, 0, 128, 0.1), rgba(128, 0, 128, 0.05)); /* Purple theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }

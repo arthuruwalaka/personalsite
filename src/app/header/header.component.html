@@ -1,12 +1,23 @@
-<div id = "header">
-    <div id = "home_bttn">
-        <a routerLink = "/" fragment = "home">Home</a>
-    </div>   
-    <div id = "sections">
-        <a routerLink="/" fragment= "about" >About</a>
-        <a routerLink="/" fragment= "resume" >Resume</a>
-        <a routerLink="/" fragment= "projects" >Projects</a>
-        <a routerLink="/" fragment= "skills" >Skills</a>
+<nav class="w-full bg-header border-b-2 border-gray-700 z-50  bg-transparent">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Home button -->
+        <div class="flex-none">
+            <a routerLink="/" fragment="home" 
+               class="inline-block bg-tetris-red border-2 border-gray-700 text-white px-6 py-2 font-bold hover:bg-red-500/30 hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300">
+                Home
+            </a>
+        </div>
+        
+        <!-- Navigation links -->
+        <div class="flex gap-8">
+            <a routerLink="/" fragment="about" 
+               class="inline-block border-2 border-gray-700 text-white px-4 py-2 hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 transition-all duration-300">About</a>
+            <a routerLink="/" fragment="resume" 
+               class="inline-block border-2 border-gray-700 text-white px-4 py-2 hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 transition-all duration-300">Resume</a>
+            <a routerLink="/" fragment="projects" 
+               class="inline-block border-2 border-gray-700 text-white px-4 py-2 hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 transition-all duration-300">Projects</a>
+            <a routerLink="/" fragment="skills" 
+               class="inline-block border-2 border-gray-700 text-white px-4 py-2 hover:bg-white/10 hover:shadow-lg hover:shadow-white/20 transition-all duration-300">Skills</a>
+        </div>
     </div>
-    
-</div>
+</nav>
