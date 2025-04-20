@@ -11,7 +11,6 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    @apply bg-gray-900;
 }
 
 #main-container {
@@ -40,7 +39,7 @@ nav {
     position: relative;
     flex: 1;
     overflow-y: auto;
-    background-color: yellow;
+    background-color: transparent;
     scroll-behavior: smooth;
     // margin-top: calc(var(--header-height) * 1); /* Pull content up behind header */
     // padding-top: var(--header-height); /* Add padding to offset the margin */
@@ -53,7 +52,7 @@ nav {
 #content > app-projects,
 #content > app-skills {
     min-height: 100%;
-    @apply border-2 border-gray-700 relative;
+    // @apply border-2 border-gray-700 relative;
 }
 
 /* Tetris block-like hover effect */
@@ -62,5 +61,5 @@ nav {
 #content > app-resume:hover,
 #content > app-projects:hover,
 #content > app-skills:hover {
-    @apply shadow-lg shadow-white/20 transition-all duration-300;
+    // @apply shadow-lg shadow-white/20 transition-all duration-300;
 }
