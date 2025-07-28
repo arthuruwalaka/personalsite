@@ -9,57 +9,15 @@
 
 html, body {
     height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
 
 #main-container {
-    position: fixed; /* Fix container to viewport */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    // min-height: 100%;
+    width: 100%;
+    background-color: white; /* or your preferred color */
     display: flex;
     flex-direction: column;
-    background-color: pink;
-}
-
-/* Fixed header takes up its space */
-nav {
-    position: sticky;
-    top: 0;
-    height: var(--header-height);
-    min-height: var(--header-height);
-    background-color: transparent;
-    z-index: 50;
-}
-
-/* Scrollable content area */
-#content {
-    position: relative;
-    flex: 1;
-    overflow-y: auto;
-    background-color: transparent;
-    scroll-behavior: smooth;
-    // margin-top: calc(var(--header-height) * 1); /* Pull content up behind header */
-    // padding-top: var(--header-height); /* Add padding to offset the margin */
-}
-
-/* Tetris-themed section styles */
-#content > app-home,
-#content > app-about,
-#content > app-resume,
-#content > app-projects,
-#content > app-skills {
-    min-height: 100%;
-    // @apply border-2 border-gray-700 relative;
-}
-
-/* Tetris block-like hover effect */
-#content > app-home:hover,
-#content > app-about:hover,
-#content > app-resume:hover,
-#content > app-projects:hover,
-#content > app-skills:hover {
-    // @apply shadow-lg shadow-white/20 transition-all duration-300;
 }

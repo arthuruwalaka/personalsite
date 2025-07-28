@@ -8,5 +8,5 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-
+  menuOpen = false;
 }
