@@ -1,11 +1,89 @@
 <section id="resume" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-6 border-t border-gray-300">
-  <h3 class="text-2xl md:text-3xl font-serif mb-6 text-center">Back Page / Resume</h3>
-  <div class="max-w-3xl mx-auto w-full">
-    <ul class="space-y-3 md:space-y-4">
-      <li><strong>2024–2025:</strong> Frontend Developer at XYZ Corp</li>
-      <li><strong>2022–2024:</strong> Freelance Web Developer</li>
-      <li><strong>Education:</strong> B.Sc. in Computer Science</li>
-    </ul>
-    <a href="#" class="block mt-6 text-center underline text-blue-600 py-2">Download Full Resume</a>
+  <h3 class="text-2xl md:text-3xl font-serif mb-8 text-center">Resume</h3>
+  <div class="max-w-4xl mx-auto w-full">
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Experience Section -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-gray-800">Experience</h4>
+        <ul class="space-y-4">
+          <li class="border-l-4 border-gray-300 pl-4">
+            <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(0)">
+              Software Engineer
+              <svg class="w-4 h-4 inline ml-2 transition-transform" [class.rotate-90]="expandedJobs[0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="text-sm text-gray-600">Roundsignal Interactions Inc.</div>
+            <div class="text-xs text-gray-500">2023–2025</div>
+            <div class="text-sm text-gray-700 mt-1 transition-all duration-300 overflow-hidden" 
+                 [class.max-h-0]="!expandedJobs[0]" 
+                 [class.max-h-32]="expandedJobs[0]"
+                 [class.opacity-0]="!expandedJobs[0]"
+                 [class.opacity-100]="expandedJobs[0]">
+              • Reduced latency by 25% using database optimization by building out a caching class utilized by all services and
+              incorporating Redis in the system design.<br>
+              • Developed 10+ API flows using Node JS and Express JS and used Postman to perform manual and automated testing with
+              Collection Runner.
+            </div>
+          </li>
+          <li class="border-l-4 border-gray-300 pl-4">
+            <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(1)">
+              Software Engineer Intern
+              <svg class="w-4 h-4 inline ml-2 transition-transform" [class.rotate-90]="expandedJobs[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="text-sm text-gray-600">NMR Intercontinental Limited</div>
+            <div class="text-xs text-gray-500">2022–2023</div>
+            <div class="text-sm text-gray-700 mt-1 transition-all duration-300 overflow-hidden" 
+                 [class.max-h-0]="!expandedJobs[1]" 
+                 [class.max-h-32]="expandedJobs[1]"
+                 [class.opacity-0]="!expandedJobs[1]"
+                 [class.opacity-100]="expandedJobs[1]">
+              • Improved job scheduling UI responsiveness, decreasing time spent per job by 30%<br>
+              • Boosted test coverage by 10% by writing 60+ unit tests using JUnit and PyTest.
+            </div>
+          </li>
+          <li class="border-l-4 border-gray-300 pl-4">
+            <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(2)">
+              Course Facilitator
+              <svg class="w-4 h-4 inline ml-2 transition-transform" [class.rotate-90]="expandedJobs[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="text-sm text-gray-600">CS LevelUp</div>
+            <div class="text-xs text-gray-500">2021–2022</div>
+            <div class="text-sm text-gray-700 mt-1 transition-all duration-300 overflow-hidden" 
+                 [class.max-h-0]="!expandedJobs[2]" 
+                 [class.max-h-32]="expandedJobs[2]"
+                 [class.opacity-0]="!expandedJobs[2]"
+                 [class.opacity-100]="expandedJobs[2]">
+              • Designed and reviewed course materials on HTML, CSS, JavaScript, and web development principles and developed
+              practical assessments to help learners test their knowledge.<br>
+              • Conducted weekly office hours and provided technical support
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Education Section -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-gray-800">Education</h4>
+        <div class="border-l-4 border-gray-300 pl-4">
+          <div class="font-semibold text-gray-900">B.Sc. Computer Science</div>
+          <div class="text-sm text-gray-600">University of Alberta</div>
+          <div class="text-xs text-gray-500">2021–2025</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-8 text-center">
+      <a href="#" (click)="downloadResume(); $event.preventDefault()" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        Download Full Resume
+      </a>
+    </div>
   </div>
 </section>
