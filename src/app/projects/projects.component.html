@@ -1,17 +1,195 @@
 <section id="projects" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center bg-gray-50 px-4 md:px-6 border-t border-gray-300">
-  <h3 class="text-2xl md:text-3xl font-serif mb-8 md:mb-10 text-center">Feature Stories</h3>
-  <div class="grid md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto w-full">
-    <div class="bg-white p-4 md:p-6 shadow-md">
-      <h4 class="text-lg md:text-xl font-bold mb-2">Project One: Portfolio Site</h4>
-      <p class="text-sm text-gray-600 mb-4">React · Tailwind · 2025</p>
-      <p class="mb-2">A personal portfolio designed like a magazine spread. Clean, stylish, and responsive.</p>
-      <a href="#" class="text-blue-600 underline">Read More →</a>
+  <h3 class="text-2xl md:text-3xl font-serif mb-8 md:mb-10 text-center">Projects</h3>
+  <div class="max-w-5xl mx-auto w-full max-h-96 overflow-y-auto relative projects-container">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-10 pt-2 pb-2">
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
+        <h4 class="text-lg md:text-xl font-bold mb-2">Portfolio Site</h4>
+        
+        <!-- Tags Section -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Angular</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">TypeScript</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Tailwind CSS</span>
+        </div>
+        
+        <p class="mb-4 text-sm text-gray-600 flex-grow">A personal portfolio designed like a magazine spread. Clean, stylish, and responsive with mobile-first design.</p>
+        
+        <!-- Links Section -->
+        <div class="flex flex-wrap gap-3 mt-auto">
+          <button 
+            (click)="openImageModal('portfolio', 0)" 
+            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
+          >
+            View Images
+          </button>
+          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
+        </div>
+      </div>
+      
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
+        <h4 class="text-lg md:text-xl font-bold mb-2">Twitter Bookmarks Search</h4>
+        
+        <!-- Tags Section -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">React</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Django</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">MySQL</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Twitter API</span>
+        </div>
+        
+        <p class="mb-4 text-sm text-gray-600 flex-grow">A web application that allows users to search for bookmarks on Twitter using a keyword.</p>
+        
+        <!-- Links Section -->
+        <div class="flex flex-wrap gap-3 mt-auto">
+          <button 
+            (click)="openImageModal('twitter-bookmarks', 0)" 
+            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
+          >
+            View Images
+          </button>
+          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Video Demo</a>
+        </div>
+      </div>
+      
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
+        <h4 class="text-lg md:text-xl font-bold mb-2">Calendar Med</h4>
+        
+        <!-- Tags Section -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">React</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Django</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">MySQL</span>
+        </div>
+        
+        <p class="mb-4 text-sm text-gray-600 flex-grow">A BI tool used for scheduling and building reports for dentistry faculty members</p>
+        
+        <!-- Links Section -->
+        <div class="flex flex-wrap gap-3 mt-auto">
+          <button 
+            (click)="openImageModal('calendar-med', 0)" 
+            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
+          >
+            View Images
+          </button>
+          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Wireframes</a>
+        </div>
+      </div>
+      
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
+        <h4 class="text-lg md:text-xl font-bold mb-2">Habit Tracker</h4>
+        
+        <!-- Tags Section -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Java</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Android Studio</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Firebase</span>
+        </div>
+        
+        <p class="mb-4 text-sm text-gray-600 flex-grow">A habit tracker app that allows users to track their habits and goals.</p>
+        
+        <!-- Links Section -->
+        <div class="flex flex-wrap gap-3 mt-auto">
+          <button 
+            (click)="openImageModal('habit-tracker', 0)" 
+            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
+          >
+            View Images
+          </button>
+          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
+        </div>
+      </div>
+      
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
+        <h4 class="text-lg md:text-xl font-bold mb-2">UNIYE</h4>
+        
+        <!-- Tags Section -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">React</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">OpenAI API</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Node.js</span>
+          <span class="px-2 py-1 bg-gray-100 text-xs rounded">PostgreSQL</span>
+        </div>
+        
+        <p class="mb-4 text-sm text-gray-600 flex-grow">Uniye is a web app that promotes teaching, learning, and collaboration among university students.</p>
+        
+        <!-- Links Section -->
+        <div class="flex flex-wrap gap-3 mt-auto">
+          <button 
+            (click)="openImageModal('uniye', 0)" 
+            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
+          >
+            View Images
+          </button>
+          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
+        </div>
+      </div>
+      
+      <!-- Add more projects here (Placeholder)--> 
+      <div class="bg-white p-4 md:p-6 shadow rounded-lg opacity-40 pointer-events-none" aria-hidden="true"></div>
     </div>
-    <div class="bg-white p-4 md:p-6 shadow-md">
-      <h4 class="text-lg md:text-xl font-bold mb-2">Project Two: Tetris Redux</h4>
-      <p class="text-sm text-gray-600 mb-4">JavaScript · Canvas API</p>
-      <p class="mb-2">A retro game reimagined, featuring sharp UX and keyboard interactions.</p>
-      <a href="#" class="text-blue-600 underline">Read More →</a>
+  </div>
+
+  <!-- Image Modal -->
+  <div 
+    *ngIf="showModal" 
+    class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-2"
+    (click)="closeModal()"
+  >
+    <div class="bg-white rounded-lg max-w-5xl max-h-[95vh] overflow-hidden relative" (click)="$event.stopPropagation()">
+      <!-- Image Display (Full Modal Space) -->
+      <div 
+        class="relative w-full h-full flex items-center justify-center modal-image-container"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+        (touchmove)="onTouchMove($event)"
+        (contextmenu)="onContextMenu($event)"
+      >
+        <!-- Loading Spinner -->
+        <div 
+          *ngIf="imageLoading" 
+          class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-20"
+        >
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        </div>
+        
+        <img 
+          *ngIf="getCurrentImage()" 
+          [src]="getCurrentImage()?.src" 
+          [alt]="getCurrentImage()?.alt"
+          class="w-full h-full object-contain p-2"
+          (load)="onImageLoad()"
+          (error)="onImageError()"
+        />
+      </div>
+      
+      <!-- Image Info (Minimal overlay at bottom) -->
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+        <!-- Progress Bar -->
+        <div *ngIf="shouldShowNavigation()" class="mb-3">
+          <div class="w-full bg-white/20 rounded-full h-1 mb-2">
+            <div 
+              class="bg-white h-1 rounded-full transition-all duration-300 ease-out"
+              [style.width.%]="progressPercentage"
+            ></div>
+          </div>
+        </div>
+        
+        <p *ngIf="getCurrentImage()?.caption" class="text-center text-sm mb-2 font-medium">
+          {{ getCurrentImage()?.caption }}
+        </p>
+        
+        <div class="flex justify-center items-center gap-4 text-xs text-white/80">
+          <span *ngIf="shouldShowNavigation()">
+            {{ selectedImageIndex + 1 }} of {{ getImageCount() }}
+          </span>
+          <span class="hidden md:block">•</span>
+          <span class="hidden md:block">← → to navigate</span>
+          <span class="md:hidden">Swipe to navigate</span>
+          <span>•</span>
+          <span class="hidden md:block">ESC to close</span>
+          <span class="md:hidden">Tap outside to close</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

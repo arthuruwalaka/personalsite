@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -11,10 +12,10 @@ import emailjs from '@emailjs/browser';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  // EmailJS credentials
-  private emailjsServiceId = 'service_8ajnr3i';
-  private emailjsTemplateId = 'template_k2j0sqt';
-  private emailjsPublicKey = 'Y--ToMxf9eCFJiMhO';
+  // EmailJS credentials from environment
+  private emailjsServiceId = environment.emailjsServiceId;
+  private emailjsTemplateId = environment.emailjsTemplateId;
+  private emailjsPublicKey = environment.emailjsPublicKey;
 
   formData = {
     name: '',
