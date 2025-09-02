@@ -1,4 +1,4 @@
-<section id="projects" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center bg-gray-50 px-4 md:px-6 border-t border-gray-300">
+<section id="projects" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center bg-gray-50 px-4 md:px-6 scroll-mt-24">
   <h3 class="text-2xl md:text-3xl font-serif mb-8 md:mb-10 text-center">Projects</h3>
   <div class="max-w-5xl mx-auto w-full max-h-96 overflow-y-auto relative projects-container">
     <div class="grid md:grid-cols-2 gap-6 md:gap-10 pt-2 pb-2">
@@ -16,13 +16,7 @@
         
         <!-- Links Section -->
         <div class="flex flex-wrap gap-3 mt-auto">
-          <button 
-            (click)="openImageModal('portfolio', 0)" 
-            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
-          >
-            View Images
-          </button>
-          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
+          <a href="https://github.com/arthuruwalaka/personalsite" target="_blank" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
         </div>
       </div>
       
@@ -41,13 +35,7 @@
         
         <!-- Links Section -->
         <div class="flex flex-wrap gap-3 mt-auto">
-          <button 
-            (click)="openImageModal('twitter-bookmarks', 0)" 
-            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
-          >
-            View Images
-          </button>
-          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Video Demo</a>
+          <a href="https://github.com/arthuruwalaka/TwitterApp" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
         </div>
       </div>
       
@@ -61,7 +49,7 @@
           <span class="px-2 py-1 bg-gray-100 text-xs rounded">MySQL</span>
         </div>
         
-        <p class="mb-4 text-sm text-gray-600 flex-grow">A BI tool used for scheduling and building reports for dentistry faculty members</p>
+        <p class="mb-4 text-sm text-gray-600 flex-grow">A BI tool used for scheduling and building reports for the UofA dentistry faculty members.</p>
         
         <!-- Links Section -->
         <div class="flex flex-wrap gap-3 mt-auto">
@@ -71,7 +59,6 @@
           >
             View Images
           </button>
-          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Wireframes</a>
         </div>
       </div>
       
@@ -95,11 +82,18 @@
           >
             View Images
           </button>
-          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
         </div>
       </div>
       
-      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col relative group overflow-hidden">
+        <!-- Coming Soon Overlay -->
+        <div class="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <div class="text-center">
+            <h5 class="text-2xl md:text-3xl font-bold text-gray-700 mb-2">Coming Soon</h5>
+            <p class="text-gray-600 text-sm">Project in development</p>
+          </div>
+        </div>
+        
         <h4 class="text-lg md:text-xl font-bold mb-2">UNIYE</h4>
         
         <!-- Tags Section -->
@@ -114,13 +108,13 @@
         
         <!-- Links Section -->
         <div class="flex flex-wrap gap-3 mt-auto">
-          <button 
+          <!-- <button 
             (click)="openImageModal('uniye', 0)" 
             class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
           >
             View Images
           </button>
-          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a>
+          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a> -->
         </div>
       </div>
       
@@ -136,6 +130,32 @@
     (click)="closeModal()"
   >
     <div class="bg-white rounded-lg max-w-5xl max-h-[95vh] overflow-hidden relative" (click)="$event.stopPropagation()">
+      <!-- Zoom Controls -->
+      <div class="absolute top-4 left-4 z-10 flex gap-2">
+        <button 
+          (click)="zoomIn()" 
+          class="bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full w-8 h-8 flex items-center justify-center shadow-lg transition-all"
+          title="Zoom In (+)"
+        >
+          +
+        </button>
+        <button 
+          (click)="zoomOut()" 
+          class="bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full w-8 h-8 flex items-center justify-center shadow-lg transition-all"
+          title="Zoom Out (-)"
+        >
+          −
+        </button>
+        <button 
+          *ngIf="isZoomed"
+          (click)="resetZoom()" 
+          class="bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full w-8 h-8 flex items-center justify-center shadow-lg transition-all"
+          title="Reset Zoom (↺)"
+        >
+          ↺
+        </button>
+      </div>
+      
       <!-- Image Display (Full Modal Space) -->
       <div 
         class="relative w-full h-full flex items-center justify-center modal-image-container"
@@ -143,6 +163,10 @@
         (touchend)="onTouchEnd($event)"
         (touchmove)="onTouchMove($event)"
         (contextmenu)="onContextMenu($event)"
+        (mousedown)="onMouseDown($event)"
+        (mousemove)="onMouseMove($event)"
+        (mouseup)="onMouseUp()"
+        (mouseleave)="onMouseUp()"
       >
         <!-- Loading Spinner -->
         <div 
@@ -156,7 +180,8 @@
           *ngIf="getCurrentImage()" 
           [src]="getCurrentImage()?.src" 
           [alt]="getCurrentImage()?.alt"
-          class="w-full h-full object-contain p-2"
+          class="max-w-full max-h-full object-contain p-2 transition-transform duration-200"
+          [ngStyle]="getImageStyle()"
           (load)="onImageLoad()"
           (error)="onImageError()"
         />
@@ -184,10 +209,10 @@
           </span>
           <span class="hidden md:block">•</span>
           <span class="hidden md:block">← → to navigate</span>
-          <span class="md:hidden">Swipe to navigate</span>
-          <span>•</span>
+          <span class="hidden md:block">•</span>
           <span class="hidden md:block">ESC to close</span>
-          <span class="md:hidden">Tap outside to close</span>
+          <span class="hidden md:block">•</span>
+          <span class="hidden md:block">+/- to zoom</span>
         </div>
       </div>
     </div>

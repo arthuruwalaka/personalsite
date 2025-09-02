@@ -29,5 +29,46 @@ body.modal-open {
     pointer-events: none; // Prevent image drag
     -webkit-user-drag: none; // Prevent image drag on webkit
     user-drag: none;
+    will-change: transform; // Optimize for frequent transform changes
+    backface-visibility: hidden; // Reduce flickering
+    -webkit-backface-visibility: hidden; // Reduce flickering on webkit
+    transform-style: preserve-3d; // Enable hardware acceleration
+    -webkit-transform-style: preserve-3d; // Enable hardware acceleration on webkit
+    
+    // Better image handling for different orientations
+    &.portrait {
+      max-height: 90vh;
+      width: auto;
+    }
+    
+    &.landscape {
+      max-width: 90vw;
+      height: auto;
+    }
+    
+    &.square {
+      max-width: 80vw;
+      max-height: 80vh;
+    }
   }
+}
+
+// Zoom controls styling
+.zoom-controls {
+  button {
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+// Zoom transition
+.zoom-transition {
+  transition: transform 0.2s ease-out;
 }
