@@ -1,11 +1,21 @@
-<section id="resume" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-6 scroll-mt-24">
-  <h3 class="text-2xl md:text-3xl font-serif mb-8 text-center">Resume</h3>
-  <div class="max-w-4xl mx-auto w-full">
-    <div class="grid md:grid-cols-2 gap-8">
+<section id="resume" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-6 scroll-mt-24 relative overflow-hidden">
+  <!-- Subtle Paper Texture Background -->
+  <div class="absolute inset-0 opacity-[0.50] pointer-events-none">
+    <div class="w-full h-full" style="
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+      background-size: 20px 20px;
+    "></div>
+  </div>
+  
+  <div class="relative z-10 w-full">
+    <h3 class="text-2xl md:text-3xl font-serif mb-8 text-center">Resume</h3>
+    
+    <div class="max-w-4xl mx-auto w-full space-y-12">
       <!-- Experience Section -->
       <div>
-        <h4 class="text-lg font-semibold mb-4 text-gray-800">Experience</h4>
-        <ul class="space-y-4">
+        <h4 class="text-lg font-semibold mb-6 text-gray-800">Experience</h4>
+        <ul class="space-y-6">
           <li class="border-l-4 border-gray-300 pl-4">
             <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(0)">
               Software Engineer
@@ -68,16 +78,16 @@
       
       <!-- Education Section -->
       <div>
-        <h4 class="text-lg font-semibold mb-4 text-gray-800">Education</h4>
+        <h4 class="text-lg font-semibold mb-6 text-gray-800">Education</h4>
         <div class="border-l-4 border-gray-300 pl-4">
           <div class="font-semibold text-gray-900">B.Sc. Computer Science</div>
           <div class="text-sm text-gray-600">University of Alberta</div>
-          <div class="text-xs text-gray-500">2021–2025</div>
+          <div class="text-xs text-gray-500">2018–2023</div>
         </div>
       </div>
     </div>
     
-    <div class="mt-8 text-center">
+    <div class="mt-12 text-center">
       <a href="#" (click)="downloadResume(); $event.preventDefault()" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>

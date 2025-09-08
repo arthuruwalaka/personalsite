@@ -13,3 +13,280 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+/* Smooth scrolling for page transitions */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section fade-in animations - scroll triggered */
+section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Intersection Observer will handle the animation triggers */
+
+/* About Page Specific Animations */
+.about-main-card {
+    opacity: 0;
+    transform: translateY(-60px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.about-main-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-left-card {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.about-left-card.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-right-card {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.about-right-card.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Skills Page - No special animations */
+
+/* Resume Page Timeline Animation */
+#resume .space-y-12 > div,
+#resume .mt-12 {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#resume .space-y-12 > div.animate-in,
+#resume .mt-12.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Add a subtle slide-in effect for job entries */
+#resume .space-y-12 > div:first-child ul li {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#resume .space-y-12 > div:first-child.animate-in ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger the job entries */
+#resume .space-y-12 > div:first-child.animate-in ul li:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+#resume .space-y-12 > div:first-child.animate-in ul li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+#resume .space-y-12 > div:first-child.animate-in ul li:nth-child(3) {
+    transition-delay: 0.45s;
+}
+
+/* Projects Page Grid Animation */
+#projects .grid {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#projects .grid.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Page Form Animation */
+#contact h3,
+#contact p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#contact h3.animate-in,
+#contact p.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#contact form {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#contact form.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+#contact .mt-12 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#contact .mt-12.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Projects Page Card Enhancement */
+#projects .bg-white {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+#projects .bg-white:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* About Page Card Enhancement */
+#about .bg-white {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+#about .bg-white:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Floating Dot Navigation Styles */
+.nav-dot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: transparent;
+    padding: 8px;
+    margin: -8px;
+}
+
+.nav-label {
+    position: absolute;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: 0s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.nav-dot:hover .nav-label {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0s;
+}
+
+.nav-dot:hover div {
+    background: #374151;
+    transform: scale(1.8);
+    box-shadow: 0 4px 12px rgba(55, 65, 81, 0.3);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-dot.active .nav-label {
+    opacity: 0;
+    transform: translateX(10px);
+    transition-delay: 1.5s;
+}
+
+.nav-dot.active div {
+    background: #374151;
+    transform: scale(1.5);
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav-dot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: transparent;
+    padding: 4px;
+}
+
+.mobile-nav-label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #6b7280;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: 0s;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.mobile-nav-dot:hover .mobile-nav-label,
+.mobile-nav-dot:active .mobile-nav-label {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.mobile-nav-dot.active .mobile-nav-label {
+    opacity: 0;
+    transform: translateY(5px);
+    transition-delay: 1.5s;
+}
+
+.mobile-nav-dot.active div {
+    background: #374151;
+    transform: scale(1.5);
+}

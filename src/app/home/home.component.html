@@ -1,5 +1,18 @@
-<section id="home" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-8 text-center scroll-mt-24">
-  <h1 class="text-3xl md:text-5xl font-serif mb-4 tracking-wide">Arthur Uwalaka</h1>
-  <h2 class="text-lg md:text-xl uppercase tracking-widest mb-6">Software Engineer</h2>
-  <a href="#projects" class="underline text-blue-600 hover:text-blue-800 py-2">Browse the Issue ↓</a>
+<section id="home" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-8 text-center relative overflow-hidden">
+  <!-- Subtle Paper Texture Background -->
+  <div class="absolute inset-0 opacity-[0.50] pointer-events-none">
+    <div class="w-full h-full" style="
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+      background-size: 20px 20px;
+    "></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-10">
+    <h1 class="text-3xl md:text-5xl font-serif mb-4 tracking-wide">Arthur Uwalaka</h1>
+    <h2 class="text-lg md:text-xl uppercase tracking-widest mb-6">
+      {{ currentText }}<span class="cursor">|</span>
+    </h2>
+  </div>
 </section>

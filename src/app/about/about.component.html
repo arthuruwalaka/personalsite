@@ -1,45 +1,46 @@
 <section id="about" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-8 relative overflow-hidden scroll-mt-24">
- <!-- Grid Background -->
-<div class="absolute inset-0 pointer-events-none overflow-hidden">
-  <!-- Dynamic grid (3x3) -->
-  <div class="grid grid-cols-3 grid-rows-3 w-full h-full opacity-50">
-    <div
-      *ngFor="let img of gridImages; let i = index"
-      class="relative w-full h-full"
-    >
-      <!-- Current image -->
-      <div
-        class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-        [style.backgroundImage]="'url(' + img.current + ')'"
-        [style.opacity]="img.visible ? 1 : 0"
-      ></div>
-
-      <!-- Next image -->
-      <div
-        class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-        [style.backgroundImage]="'url(' + img.next + ')'"
-        [style.opacity]="img.visible ? 0 : 1"
-      ></div>
-    </div>
+  <!-- Subtle Paper Texture Background -->
+  <div class="absolute inset-0 opacity-[0.50] pointer-events-none">
+    <div class="w-full h-full" style="
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+      background-size: 20px 20px;
+    "></div>
   </div>
 
-  <!-- Fade overlay in all directions -->
-  <div 
-    class="absolute inset-0 pointer-events-none"
-    style="
-      background: radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        transparent 40%,
-        rgba(255,255,255,0.3) 70%,
-        rgba(255,255,255,0.9) 100%
-      );
-    "
-  ></div>
-
-  <!-- Subtle overlay to refine the background -->
-  <div class="absolute inset-0 bg-white/70"></div>
-</div>
+ <!-- Grid Background - COMMENTED OUT FOR UNIFIED BACKGROUND -->
+ <!-- <div class="absolute inset-0 pointer-events-none overflow-hidden">
+   <div class="grid grid-cols-3 grid-rows-3 w-full h-full opacity-50">
+     <div
+       *ngFor="let img of gridImages; let i = index"
+       class="relative w-full h-full"
+     >
+       <div
+         class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+         [style.backgroundImage]="'url(' + img.current + ')'"
+         [style.opacity]="img.visible ? 1 : 0"
+       ></div>
+       <div
+         class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+         [style.backgroundImage]="'url(' + img.next + ')'"
+         [style.opacity]="img.visible ? 0 : 1"
+       ></div>
+     </div>
+   </div>
+   <div 
+     class="absolute inset-0 pointer-events-none"
+     style="
+       background: radial-gradient(
+         ellipse at center,
+         transparent 0%,
+         transparent 40%,
+         rgba(255,255,255,0.3) 70%,
+         rgba(255,255,255,0.9) 100%
+       );
+     "
+   ></div>
+   <div class="absolute inset-0 bg-white/70"></div>
+ </div> -->
   <!-- Main Content Container -->
   <div class="relative z-10 w-full">
     <!-- Header Section -->
@@ -53,7 +54,7 @@
     <!-- Content Layout - Centered and Full Width -->
     <div class="w-full max-w-4xl mx-auto">
       <!-- Main Bio Card -->
-      <div class="bg-white/100 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mb-8">
+      <div class="about-main-card bg-white/100 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mb-8">
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 font-medium text-center">
           I'm Arthur, a software engineer and problem solver. I'm passionate about creating clean, intuitive digital experiences that feel as good as they function.
         </p>
@@ -61,11 +62,11 @@
 
       <!-- Focus and Approach Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <div class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <div class="about-left-card bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
           <h4 class="font-semibold text-gray-800 mb-4 text-center text-lg">Focus</h4>
           <p class="text-gray-600 text-center">Full-stack development with a passion for user experience</p>
         </div>
-        <div class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <div class="about-right-card bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
           <h4 class="font-semibold text-gray-800 mb-4 text-center text-lg">Approach</h4>
           <p class=" text-gray-800 text-center">Clean code, intuitive design, and innovative solutions</p>
         </div>

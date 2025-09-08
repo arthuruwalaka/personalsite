@@ -17,13 +17,12 @@ interface GridCell {
 })
 export class AboutComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/images/background1.png',
-    'assets/images/background2.png',
-    'assets/images/background3.png',
-    'assets/images/background4.png',
-    'assets/images/background5.png',
+    'assets/images/grid/background1.png',
+    'assets/images/grid/background2.png',
+    'assets/images/grid/background3.png',
+    'assets/images/grid/background4.png',
+    'assets/images/grid/background5.png',
   ];
-
   gridImages: GridCell[] = [];
   private intervalId: any;
   private isBrowser: boolean = false;

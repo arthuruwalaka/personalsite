@@ -1,11 +1,70 @@
-<div class="min-h-full w-full bg-white text-gray-900 font-sans">
-    <app-header></app-header>
+<div class="min-h-full w-full bg-white text-gray-900 font-sans relative">
+    <!-- Floating Dot Navigation -->
+    <nav class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="nav-dot group" data-section="home">
+                <div class="w-2 h-2 rounded-full bg-gray-400 transition-all duration-200"></div>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#about" class="nav-dot group" data-section="about">
+                <div class="w-2 h-2 rounded-full bg-gray-400 transition-all duration-200"></div>
+                <span class="nav-label">About</span>
+            </a>
+            <a href="#skills" class="nav-dot group" data-section="skills">
+                <div class="w-2 h-2 rounded-full bg-gray-400 transition-all duration-200"></div>
+                <span class="nav-label">Skills</span>
+            </a>
+            <a href="#projects" class="nav-dot group" data-section="projects">
+                <div class="w-2 h-2 rounded-full bg-gray-400 transition-all duration-200"></div>
+                <span class="nav-label">Projects</span>
+            </a>
+            <a href="#resume" class="nav-dot group" data-section="resume">
+                <div class="w-2 h-2 rounded-full bg-gray-400 transition-all duration-200"></div>
+                <span class="nav-label">Resume</span>
+            </a>
+            <a href="#contact" class="nav-dot group" data-section="contact">
+                <div class="w-2 h-2 rounded-full bg-gray-400 transition-all duration-200"></div>
+                <span class="nav-label">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden">
+        <div class="flex space-x-6 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gray-200">
+            <a href="#home" class="mobile-nav-dot group" data-section="home">
+                <div class="w-3 h-3 rounded-full bg-gray-400 transition-all duration-300 group-active:bg-gray-600 group-active:scale-125"></div>
+                <span class="mobile-nav-label">Home</span>
+            </a>
+            <a href="#about" class="mobile-nav-dot group" data-section="about">
+                <div class="w-3 h-3 rounded-full bg-gray-400 transition-all duration-300 group-active:bg-gray-600 group-active:scale-125"></div>
+                <span class="mobile-nav-label">About</span>
+            </a>
+            <a href="#skills" class="mobile-nav-dot group" data-section="skills">
+                <div class="w-3 h-3 rounded-full bg-gray-400 transition-all duration-300 group-active:bg-gray-600 group-active:scale-125"></div>
+                <span class="mobile-nav-label">Skills</span>
+            </a>
+            <a href="#projects" class="mobile-nav-dot group" data-section="projects">
+                <div class="w-3 h-3 rounded-full bg-gray-400 transition-all duration-300 group-active:bg-gray-600 group-active:scale-125"></div>
+                <span class="mobile-nav-label">Projects</span>
+            </a>
+            <a href="#resume" class="mobile-nav-dot group" data-section="resume">
+                <div class="w-3 h-3 rounded-full bg-gray-400 transition-all duration-300 group-active:bg-gray-600 group-active:scale-125"></div>
+                <span class="mobile-nav-label">Resume</span>
+            </a>
+            <a href="#contact" class="mobile-nav-dot group" data-section="contact">
+                <div class="w-3 h-3 rounded-full bg-gray-400 transition-all duration-300 group-active:bg-gray-600 group-active:scale-125"></div>
+                <span class="mobile-nav-label">Contact</span>
+            </a>
+        </div>
+    </nav>
+
     <main>
         <app-home id="home"></app-home>
         <app-about id="about"></app-about>
+        <app-skills id="skills"></app-skills>
         <app-projects id="projects"></app-projects>
         <app-resume id="resume"></app-resume>
-        <app-skills id="skills"></app-skills>
         <app-contact id="contact"></app-contact>
     </main>
 </div>

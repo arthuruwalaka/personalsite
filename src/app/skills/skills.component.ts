@@ -52,6 +52,9 @@ export class SkillsComponent {
     { name: 'CI/CD pipelines', level: 'Advanced', progress: 80, category: 'DevOps/CI/CD' }
   ];
 
+
+
+
   get skillsByCategory() {
     const grouped = this.skills.reduce((acc, skill) => {
       if (!acc[skill.category]) {
