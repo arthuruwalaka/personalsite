@@ -1,4 +1,7 @@
 {
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/my-personal-project/browser",
+  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/(.*)",
