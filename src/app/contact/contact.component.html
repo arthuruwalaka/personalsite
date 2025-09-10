@@ -1,12 +1,4 @@
 <section id="contact" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-6 text-center scroll-mt-24 relative overflow-hidden">
-  <!-- Subtle Paper Texture Background -->
-  <div class="absolute inset-0 opacity-[0.50] pointer-events-none">
-    <div class="w-full h-full" style="
-      background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
-      background-size: 20px 20px;
-    "></div>
-  </div>
   
   <div class="relative z-10 w-full">
     <h3 class="text-2xl md:text-3xl font-serif mb-4">Get in Touch</h3>
@@ -55,12 +47,12 @@
     </button>
     
     <!-- Success Message -->
-    <div *ngIf="submitSuccess" class="mt-4 p-3 bg-green-100 text-green-800 rounded">
+    <div *ngIf="submitSuccess" class="mt-4 p-3 bg-green-50 text-green-700 rounded border border-green-200">
       Message sent successfully! I'll get back to you soon.
     </div>
     
     <!-- Error Message -->
-    <div *ngIf="submitError" class="mt-4 p-3 bg-red-100 text-red-800 rounded">
+    <div *ngIf="submitError" class="mt-4 p-3 bg-red-50 text-red-700 rounded border border-red-200">
       Sorry, there was an error sending your message. Please try again.
     </div>
   </form>

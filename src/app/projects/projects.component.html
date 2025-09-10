@@ -1,25 +1,45 @@
 <section id="projects" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-6 scroll-mt-24 relative overflow-hidden">
-  <!-- Subtle Paper Texture Background -->
-  <div class="absolute inset-0 opacity-[0.50] pointer-events-none">
-    <div class="w-full h-full" style="
-      background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
-      background-size: 20px 20px;
-    "></div>
-  </div>
   
   <div class="relative z-10 w-full">
     <h3 class="text-2xl md:text-3xl font-serif mb-8 md:mb-10 text-center">Projects</h3>
   <div class="max-w-5xl mx-auto w-full max-h-96 overflow-y-auto relative projects-container">
     <div class="grid md:grid-cols-2 gap-6 md:gap-10 pt-2 pb-2">
+     
+      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col relative group overflow-hidden">
+        <!-- Coming Soon Overlay -->
+        <div class="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <div class="text-center">
+            <h5 class="text-2xl md:text-3xl font-bold text-gray-700 mb-2">Coming Soon</h5>
+            <p class="text-gray-600 text-sm">Project in development</p>
+          </div>
+        </div>
+        
+        <h4 class="text-lg md:text-xl font-bold mb-2">UNIYE</h4>
+        
+        <!-- Tags Section -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f8fafc; color: #9ca3af;">React</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fefcf7; color: #9ca3af;">OpenAI API</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f7faf7; color: #9ca3af;">Node.js</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fdf7fd; color: #9ca3af;">PostgreSQL</span>
+        </div>
+        
+        <p class="mb-4 text-sm text-gray-600 flex-grow">Uniye is a web app that promotes teaching, learning, and collaboration among university students.</p>
+        
+        <!-- Links Section -->
+        <div class="flex flex-wrap gap-3 mt-auto">
+          <!--insert link here -->    
+        </div>
+      </div>
+
       <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col">
         <h4 class="text-lg md:text-xl font-bold mb-2">Portfolio Site</h4>
         
         <!-- Tags Section -->
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Angular</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">TypeScript</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Tailwind CSS</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fef7f7; color: #9ca3af;">Angular</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f8fafc; color: #9ca3af;">TypeScript</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fefcf7; color: #9ca3af;">Tailwind CSS</span>
         </div>
         
         <p class="mb-4 text-sm text-gray-600 flex-grow">A personal portfolio designed like a magazine spread. Clean, stylish, and responsive with mobile-first design.</p>
@@ -35,10 +55,10 @@
         
         <!-- Tags Section -->
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">React</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Django</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">MySQL</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Twitter API</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f8fafc; color: #9ca3af;">React</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f7faf7; color: #9ca3af;">Django</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fefcf7; color: #9ca3af;">MySQL</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fdf7fd; color: #9ca3af;">Twitter API</span>
         </div>
         
         <p class="mb-4 text-sm text-gray-600 flex-grow">A web application that allows users to search for bookmarks on Twitter using a keyword.</p>
@@ -54,9 +74,9 @@
         
         <!-- Tags Section -->
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">React</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Django</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">MySQL</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f8fafc; color: #9ca3af;">React</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f7faf7; color: #9ca3af;">Django</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fefcf7; color: #9ca3af;">MySQL</span>
         </div>
         
         <p class="mb-4 text-sm text-gray-600 flex-grow">A BI tool used for scheduling and building reports for the UofA dentistry faculty members.</p>
@@ -77,9 +97,9 @@
         
         <!-- Tags Section -->
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Java</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Android Studio</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Firebase</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #fef7f7; color: #9ca3af;">Java</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f8fafc; color: #9ca3af;">Android Studio</span>
+          <span class="px-2 py-1 text-xs rounded" style="background-color: #f7faf7; color: #9ca3af;">Firebase</span>
         </div>
         
         <p class="mb-4 text-sm text-gray-600 flex-grow">A habit tracker app that allows users to track their habits and goals.</p>
@@ -95,38 +115,7 @@
         </div>
       </div>
       
-      <div class="bg-white p-4 md:p-6 shadow-md rounded-lg flex flex-col relative group overflow-hidden">
-        <!-- Coming Soon Overlay -->
-        <div class="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <div class="text-center">
-            <h5 class="text-2xl md:text-3xl font-bold text-gray-700 mb-2">Coming Soon</h5>
-            <p class="text-gray-600 text-sm">Project in development</p>
-          </div>
-        </div>
-        
-        <h4 class="text-lg md:text-xl font-bold mb-2">UNIYE</h4>
-        
-        <!-- Tags Section -->
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">React</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">OpenAI API</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">Node.js</span>
-          <span class="px-2 py-1 bg-gray-100 text-xs rounded">PostgreSQL</span>
-        </div>
-        
-        <p class="mb-4 text-sm text-gray-600 flex-grow">Uniye is a web app that promotes teaching, learning, and collaboration among university students.</p>
-        
-        <!-- Links Section -->
-        <div class="flex flex-wrap gap-3 mt-auto">
-          <!-- <button 
-            (click)="openImageModal('uniye', 0)" 
-            class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium cursor-pointer"
-          >
-            View Images
-          </button>
-          <a href="#" class="text-gray-600 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">Source Code</a> -->
-        </div>
-      </div>
+      
       
       <!-- Add more projects here (Placeholder)--> 
       <div class="bg-white p-4 md:p-6 shadow rounded-lg opacity-40 pointer-events-none" aria-hidden="true"></div>
@@ -140,8 +129,30 @@
     (click)="closeModal()"
   >
     <div class="bg-white rounded-lg max-w-5xl max-h-[95vh] overflow-hidden relative" (click)="$event.stopPropagation()">
+      <!-- Close Button (Mobile Only) -->
+      <button 
+        (click)="closeModal()" 
+        class="absolute top-4 right-4 z-50 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all md:hidden"
+        title="Close"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Fullscreen Button (Mobile Only) -->
+      <button 
+        (click)="toggleFullscreen()" 
+        class="absolute top-4 right-16 z-50 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all md:hidden"
+        title="Toggle Fullscreen"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+        </svg>
+      </button>
+
       <!-- Zoom Controls -->
-      <div class="absolute top-4 left-4 z-10 flex gap-2">
+      <div class="absolute top-4 left-4 z-50 flex gap-2">
         <button 
           (click)="zoomIn()" 
           class="bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full w-8 h-8 flex items-center justify-center shadow-lg transition-all"
@@ -166,9 +177,9 @@
         </button>
       </div>
       
-      <!-- Image Display (Full Modal Space) -->
+      <!-- Image Display (With padding for controls) -->
       <div 
-        class="relative w-full h-full flex items-center justify-center modal-image-container"
+        class="relative w-full h-full flex items-center justify-center modal-image-container pt-16 pb-20 px-4"
         (touchstart)="onTouchStart($event)"
         (touchend)="onTouchEnd($event)"
         (touchmove)="onTouchMove($event)"
@@ -190,7 +201,7 @@
           *ngIf="getCurrentImage()" 
           [src]="getCurrentImage()?.src" 
           [alt]="getCurrentImage()?.alt"
-          class="max-w-full max-h-full object-contain p-2 transition-transform duration-200"
+          class="max-w-full max-h-full object-contain transition-transform duration-200"
           [ngStyle]="getImageStyle()"
           (load)="onImageLoad()"
           (error)="onImageError()"
@@ -198,7 +209,7 @@
       </div>
       
       <!-- Image Info (Minimal overlay at bottom) -->
-      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white z-50">
         <!-- Progress Bar -->
         <div *ngIf="shouldShowNavigation()" class="mb-3">
           <div class="w-full bg-white/20 rounded-full h-1 mb-2">
@@ -226,6 +237,6 @@
         </div>
       </div>
     </div>
-  </div>
-  </div>
+        </div>
+    </div>
 </section>

@@ -38,6 +38,9 @@ export class ProjectsComponent implements OnDestroy {
   initialDistance = 0;
   initialZoom = 1;
 
+  // Fullscreen state
+  isFullscreen = false;
+
   projects: Project[] = [
     {
       id: 'twitter-bookmarks',
@@ -118,6 +121,10 @@ export class ProjectsComponent implements OnDestroy {
     this.showModal = true;
     this.imageLoading = true; // Start loading state
     
+    // Reset zoom and pan state immediately
+    this.resetZoom();
+    this.imageElement = null; // Reset cached element
+    
     // Prevent background scrolling
     if (isPlatformBrowser(this.platformId)) {
       document.body.classList.add('modal-open');
@@ -132,9 +139,14 @@ export class ProjectsComponent implements OnDestroy {
     this.resetZoom();
     this.imageElement = null; // Reset cached element
     
-    // Restore background scrolling
+    // Restore background scrolling and exit fullscreen
     if (isPlatformBrowser(this.platformId)) {
       document.body.classList.remove('modal-open');
+      
+      // Exit fullscreen if active
+      if (this.isFullscreen) {
+        this.exitFullscreen();
+      }
     }
   }
 
@@ -343,7 +355,11 @@ export class ProjectsComponent implements OnDestroy {
     this.isZoomed = false;
     this.panX = 0;
     this.panY = 0;
-    this.updateImageTransform(0, 0);
+    
+    // Force reset the image transform immediately
+    if (this.imageElement) {
+      this.imageElement.style.transform = 'scale(1) translate(0px, 0px)';
+    }
   }
 
 
@@ -352,6 +368,59 @@ export class ProjectsComponent implements OnDestroy {
   onContextMenu(event: Event) {
     event.preventDefault();
     return false;
+  }
+
+  // Fullscreen methods for mobile
+  toggleFullscreen() {
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isFullscreen) {
+        this.exitFullscreen();
+      } else {
+        this.enterFullscreen();
+      }
+    }
+  }
+
+  private enterFullscreen() {
+    if (isPlatformBrowser(this.platformId)) {
+      const element = document.documentElement;
+      
+      if (element.requestFullscreen) {
+        element.requestFullscreen().then(() => {
+          this.isFullscreen = true;
+        }).catch(err => {
+          console.log('Fullscreen request failed:', err);
+        });
+      } else if ((element as any).webkitRequestFullscreen) {
+        // Safari
+        (element as any).webkitRequestFullscreen();
+        this.isFullscreen = true;
+      } else if ((element as any).msRequestFullscreen) {
+        // IE/Edge
+        (element as any).msRequestFullscreen();
+        this.isFullscreen = true;
+      }
+    }
+  }
+
+  private exitFullscreen() {
+    if (isPlatformBrowser(this.platformId)) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().then(() => {
+          this.isFullscreen = false;
+        }).catch(err => {
+          console.log('Exit fullscreen failed:', err);
+        });
+      } else if ((document as any).webkitExitFullscreen) {
+        // Safari
+        (document as any).webkitExitFullscreen();
+        this.isFullscreen = false;
+      } else if ((document as any).msExitFullscreen) {
+        // IE/Edge
+        (document as any).msExitFullscreen();
+        this.isFullscreen = false;
+      }
+    }
   }
 
   // Image loading handlers
@@ -389,8 +458,8 @@ export class ProjectsComponent implements OnDestroy {
     if (!image) return {};
     
     const baseStyles = {
-      'max-width': '90vw',
-      'max-height': '90vh',
+      'max-width': '100%',
+      'max-height': '100%',
       'object-fit': 'contain'
     };
     

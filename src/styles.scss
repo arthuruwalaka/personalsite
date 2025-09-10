@@ -14,6 +14,7 @@ html, body {
     padding: 0;
 }
 
+
 /* Smooth scrolling for page transitions */
 html {
     scroll-behavior: smooth;
@@ -196,6 +197,175 @@ section.animate-in {
     border-color: rgba(0, 0, 0, 0.12);
 }
 
+/* Resume Page Card Layout */
+#resume .space-y-12 > div {
+    margin-bottom: 3rem;
+}
+
+#resume .space-y-12 > div:last-child {
+    margin-bottom: 0;
+}
+
+#resume ul li,
+#resume .border-l-4 {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#resume ul li:hover,
+#resume .border-l-4:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+#resume ul li:last-child {
+    margin-bottom: 0;
+}
+
+#resume .mt-12 {
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+/* Resume Download Button Interactive Feedback */
+#resume .mt-12 a {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#resume .mt-12 a:hover {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#resume .mt-12 a:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s;
+}
+
+#resume .mt-12 a svg {
+    transition: all 0.3s ease;
+}
+
+#resume .mt-12 a:hover svg {
+    transform: translateY(-1px) rotate(5deg);
+}
+
+#resume .mt-12 a:active svg {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+/* Loading state animation */
+#resume .mt-12 a.loading {
+    pointer-events: none;
+    opacity: 0.7;
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+}
+
+#resume .mt-12 a.loading svg {
+    animation: downloadSpin 1s linear infinite;
+}
+
+/* Success state animation */
+#resume .mt-12 a.success {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    pointer-events: none;
+}
+
+#resume .mt-12 a.success svg {
+    animation: successCheck 0.6s ease-in-out;
+}
+
+@keyframes successCheck {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes downloadSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Contact Send Button Interactive Feedback */
+#contact button[type="submit"] {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#contact button[type="submit"]:hover {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#contact button[type="submit"]:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s;
+}
+
+#contact button[type="submit"] svg {
+    transition: all 0.3s ease;
+}
+
+#contact button[type="submit"]:hover svg {
+    transform: translateY(-1px) rotate(5deg);
+}
+
+#contact button[type="submit"]:active svg {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+/* Loading state animation for contact button */
+#contact button[type="submit"].loading {
+    pointer-events: none;
+    opacity: 0.7;
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+}
+
+#contact button[type="submit"].loading svg {
+    animation: downloadSpin 1s linear infinite;
+}
+
+/* Success state animation for contact button */
+#contact button[type="submit"].success {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    pointer-events: none;
+}
+
+#contact button[type="submit"].success svg {
+    animation: successCheck 0.6s ease-in-out;
+}
+
+
 /* Floating Dot Navigation Styles */
 .nav-dot {
     position: relative;
@@ -289,4 +459,9 @@ section.animate-in {
 .mobile-nav-dot.active div {
     background: #374151;
     transform: scale(1.5);
+}
+
+/* Hide navigation when modal is open */
+body.modal-open nav {
+    display: none !important;
 }

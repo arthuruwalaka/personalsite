@@ -1,12 +1,4 @@
 <section id="resume" class="min-h-screen w-full flex flex-1 flex-col justify-center items-center px-4 md:px-6 scroll-mt-24 relative overflow-hidden">
-  <!-- Subtle Paper Texture Background -->
-  <div class="absolute inset-0 opacity-[0.50] pointer-events-none">
-    <div class="w-full h-full" style="
-      background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
-      background-size: 20px 20px;
-    "></div>
-  </div>
   
   <div class="relative z-10 w-full">
     <h3 class="text-2xl md:text-3xl font-serif mb-8 text-center">Resume</h3>
@@ -16,8 +8,8 @@
       <div>
         <h4 class="text-lg font-semibold mb-6 text-gray-800">Experience</h4>
         <ul class="space-y-6">
-          <li class="border-l-4 border-gray-300 pl-4">
-            <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(0)">
+          <li class="border-l-4 border-gray-300 pl-4 cursor-pointer hover:bg-gray-50 transition-colors" (click)="toggleJobDetails(0)">
+            <div class="font-semibold text-gray-900">
               Software Engineer
               <svg class="w-4 h-4 inline ml-2 transition-transform" [class.rotate-90]="expandedJobs[0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -36,8 +28,8 @@
               Collection Runner.
             </div>
           </li>
-          <li class="border-l-4 border-gray-300 pl-4">
-            <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(1)">
+          <li class="border-l-4 border-gray-300 pl-4 cursor-pointer hover:bg-gray-50 transition-colors" (click)="toggleJobDetails(1)">
+            <div class="font-semibold text-gray-900">
               Software Engineer Intern
               <svg class="w-4 h-4 inline ml-2 transition-transform" [class.rotate-90]="expandedJobs[1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -54,8 +46,8 @@
               • Boosted test coverage by 10% by writing 60+ unit tests using JUnit and PyTest.
             </div>
           </li>
-          <li class="border-l-4 border-gray-300 pl-4">
-            <div class="font-semibold text-gray-900 cursor-pointer hover:text-gray-700 transition-colors" (click)="toggleJobDetails(2)">
+          <li class="border-l-4 border-gray-300 pl-4 cursor-pointer hover:bg-gray-50 transition-colors" (click)="toggleJobDetails(2)">
+            <div class="font-semibold text-gray-900">
               Course Facilitator
               <svg class="w-4 h-4 inline ml-2 transition-transform" [class.rotate-90]="expandedJobs[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
