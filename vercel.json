@@ -1,22 +1,11 @@
 {
-  "buildCommand": "ng build --configuration production",
+  "buildCommand": "ng build --configuration production --output-hashing=all",
   "outputDirectory": "dist/my-personal-project/browser",
   "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
   ]
 }
