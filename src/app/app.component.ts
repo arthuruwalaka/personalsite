@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ResumeComponent } from './resume/resume.component';
@@ -42,7 +43,13 @@ import { ContactComponent } from './contact/contact.component';
 export class AppComponent implements AfterViewInit, OnDestroy {
   private scrollListener?: () => void;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title
+  ) {
+    // Set the page title
+    this.titleService.setTitle('Arthur Uwalaka - Software Engineer');
+  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
