@@ -6,22 +6,6 @@ A modern, minimalist personal portfolio website built with Angular and Tailwind 
 
 [View Live Site](https://personalsite-blond-iota.vercel.app)
 
-## ✨ Features
-
-- **Responsive Design**: Mobile-first approach with seamless desktop experience
-- **Modern UI**: Clean, minimalist design inspired by magazine layouts
-- **Interactive Sections**:
-  - **Home**: Dynamic typing animation with rotating titles
-  - **About**: Professional background and experience
-  - **Skills**: Technical skills with visual progress indicators
-  - **Projects**: Portfolio showcase with image galleries
-  - **Resume**: Professional experience and education
-  - **Contact**: Contact form with EmailJS integration
-- **Smooth Animations**: Scroll-triggered animations and transitions
-- **Image Modal**: Full-screen image viewing with zoom and pan controls
-- **Navigation**: Floating dot navigation system
-- **Scroll Indicators**: Subtle visual cues for scrollable content
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: Angular 18, TypeScript
