@@ -16,6 +16,14 @@ interface Skill {
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  showArrow = true;
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    const scrollTop = element.scrollTop;
+    this.showArrow = scrollTop === 0;
+  }
+
   skills: Skill[] = [
     // Programming Languages
     { name: 'Python', level: 'Advanced', progress: 90, category: 'Programming Languages' },

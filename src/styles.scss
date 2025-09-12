@@ -465,3 +465,15 @@ section.animate-in {
 body.modal-open nav {
     display: none !important;
 }
+
+/* Cursor change for scrollable areas */
+.skills-container,
+.projects-container {
+    cursor: grab;
+}
+
+.skills-container:active,
+.projects-container:active {
+    cursor: grabbing;
+}
+

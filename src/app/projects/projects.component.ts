@@ -41,6 +41,9 @@ export class ProjectsComponent implements OnDestroy {
   // Fullscreen state
   isFullscreen = false;
 
+  // Scroll arrow visibility
+  showArrow = true;
+
   projects: Project[] = [
     {
       id: 'twitter-bookmarks',
@@ -472,6 +475,12 @@ export class ProjectsComponent implements OnDestroy {
     }
     
     return baseStyles;
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    const scrollTop = element.scrollTop;
+    this.showArrow = scrollTop === 0;
   }
 
   ngOnDestroy() {
