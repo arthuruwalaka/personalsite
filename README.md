@@ -163,16 +163,4 @@ This is a personal portfolio project, but suggestions and feedback are welcome! 
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📞 Contact
-
-**Arthur Uwalaka**
-
-- **Email**: [Contact via website](https://personalsite-blond-iota.vercel.app/#contact)
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [@arthuruwalaka](https://github.com/arthuruwalaka)
-
----
-
-⭐ **Star this repository** if you found it helpful or inspiring!
-
 _Built with ❤️ using Angular and Tailwind CSS_
