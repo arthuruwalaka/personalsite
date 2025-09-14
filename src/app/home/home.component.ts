@@ -13,13 +13,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   fullText = 'Software Engineer';
   isDeleting = false;
   textIndex = 0;
-  private animationSpeed = 100; // milliseconds
-  private pauseTime = 2000; // pause between cycles
+  private animationSpeed = 100;
+  private pauseTime = 2000; 
   private animationInterval: any;
   private isBrowser: boolean = false;
   private isPaused = false;
 
-  // Array of titles to cycle through
   private titles = [
     'Software Engineer',
     'Full-Stack Developer',

@@ -25,12 +25,10 @@ export class ProjectsComponent implements OnDestroy {
   selectedImageIndex = 0;
   showModal = false;
   
-  // New properties for enhanced functionality
   imageLoading = false;
   touchStartX = 0;
   touchStartY = 0;
   
-  // Zoom functionality
   zoomLevel = 1;
   isZoomed = false;
   panX = 0;
@@ -38,10 +36,8 @@ export class ProjectsComponent implements OnDestroy {
   initialDistance = 0;
   initialZoom = 1;
 
-  // Fullscreen state
   isFullscreen = false;
 
-  // Scroll arrow visibility
   showArrow = true;
 
   projects: Project[] = [

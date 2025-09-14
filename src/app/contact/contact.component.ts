@@ -12,7 +12,6 @@ import { environment } from '../../environments/environment';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  // EmailJS credentials from environment
   private emailjsServiceId = environment.emailjsServiceId;
   private emailjsTemplateId = environment.emailjsTemplateId;
   private emailjsPublicKey = environment.emailjsPublicKey;
