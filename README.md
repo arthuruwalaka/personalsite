@@ -8,7 +8,7 @@ A modern, minimalist personal portfolio website built with Angular and Tailwind 
 
 ## 🛠️ Tech Stack
 
-Angular 18, TypeScript, Tailwind CSS
+Angular 18, TypeScript, Tailwind CSS.
 
 ## 🚀 Getting Started
 
