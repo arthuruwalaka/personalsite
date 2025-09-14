@@ -49,7 +49,8 @@ Thumbs.db
 .env.production.local
 
 # Angular environment files with sensitive data
-
+src/environments/environment.ts
+src/environments/environment.prod.ts
 
 
 # API keys and secrets

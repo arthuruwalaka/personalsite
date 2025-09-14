@@ -16,14 +16,6 @@ export class ContactComponent {
   private emailjsTemplateId = environment.emailjsTemplateId;
   private emailjsPublicKey = environment.emailjsPublicKey;
 
-  constructor() {
-    // Debug log
-    console.log('Environment variables:', {
-      serviceId: this.emailjsServiceId,
-      templateId: this.emailjsTemplateId,
-      publicKey: this.emailjsPublicKey
-    });
-  }
 
   formData = {
     name: '',
