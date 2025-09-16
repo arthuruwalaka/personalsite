@@ -36,14 +36,6 @@ export class ContactComponent {
     this.submitSuccess = false;
     this.submitError = false;
 
-    // Debug: Log the credentials being used
-    console.log('EmailJS Debug Info:', {
-      serviceId: this.emailjsServiceId,
-      templateId: this.emailjsTemplateId,
-      publicKey: this.emailjsPublicKey,
-      formData: this.formData
-    });
-
     try {
       const result = await emailjs.send(
         this.emailjsServiceId,
@@ -56,12 +48,11 @@ export class ContactComponent {
         this.emailjsPublicKey
       );
 
-      console.log('EmailJS Success:', result);
       this.submitSuccess = true;
       this.formData = { name: '', email: '', message: '' };
     } catch (error) {
-      console.error('EmailJS Error Details:', error);
       this.submitError = true;
+      console.error('EmailJS error:', error);
     } finally {
       this.isSubmitting = false;
     }
